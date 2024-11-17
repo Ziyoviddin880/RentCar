@@ -3,8 +3,8 @@ import { initReactI18next } from "react-i18next";
 
 import Backend from "i18next-http-backend";
 import LanguageDetector from "i18next-browser-languagedetector";
-import ruTranslation from "../public/locales/ru.json";
-import enTranslation from "../public/locales/en.json";
+import ruTranslation from "./locales/ru.json";
+import enTranslation from "./locales/en.json";
 
 i18n
   .use(Backend)

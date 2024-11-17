@@ -9,6 +9,7 @@ import BlogPage from "../pages/blog/BlogPage";
 import ServicePage from "../pages/service/ServicePage";
 import BrandPage from "../pages/brand/BrandPage";
 import ProductItem from "../pages/productItem/ProductItem";
+import NotFoundPage from "../pages/notFound/NotFoundPage";
 
 export const routes = createBrowserRouter([
   {
@@ -50,6 +51,10 @@ export const routes = createBrowserRouter([
       {
         path: "brand",
         element: <BrandPage />,
+      },
+      {
+        path: "*",
+        element: <NotFoundPage />,
       },
     ],
   },
