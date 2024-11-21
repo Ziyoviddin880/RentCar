@@ -1,5 +1,7 @@
 const ServicePage = () => {
-  return <div>ServicePage</div>;
+  <>
+    Start service page
+  </>
 };
 
 export default ServicePage;
