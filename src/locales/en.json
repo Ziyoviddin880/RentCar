@@ -1,3 +1,13 @@
 {
-  "salom": "salom"
+  "menu": {
+    "cars": "CARS",
+    "brand": "BRANDS",
+    "service": "SERVICES",
+    "about": "ABOUT US",
+    "contact": "CONTACTS",
+    "blog": "BLOGS"
+  },
+  "input": {
+    "search": "Search..."
+  }
 }
