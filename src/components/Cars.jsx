@@ -4,6 +4,7 @@ import { toast } from "react-toastify";
 import { FaWhatsapp, FaTelegram } from "react-icons/fa";
 import logo from '../images/logo.png'
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 export default function Cars() {
   const [cars, setCars] = useState([]);
@@ -14,6 +15,7 @@ export default function Cars() {
   const [filteredCars, setFilteredCars] = useState([]);
   const [uniqueCategories, setUniqueCategories] = useState([]); 
   const imageBaseUrl = "https://realauto.limsa.uz/api/uploads/images/";
+  const {t}= useTranslation()
 
   const filteredCarsRef = useRef(null);
 
@@ -23,8 +25,6 @@ export default function Cars() {
       const fetchedCars = response?.data?.data || [];
       setCars(fetchedCars);
       setFilteredCars(fetchedCars);
-
-      
       const categories = [
         ...new Set(fetchedCars.map((car) => car.category?.name_en)),
       ].filter(Boolean);
