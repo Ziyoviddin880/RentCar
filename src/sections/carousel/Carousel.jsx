@@ -5,6 +5,7 @@ const MultiCardCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const { data: cars } = useGet("cars");
+  const { data: brands } = useGet("brands");
 
   const handleNext = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % cars?.data?.data.length);
