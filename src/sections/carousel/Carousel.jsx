@@ -19,7 +19,6 @@ const MultiCardCarousel = () => {
   if (currentIndex > cars?.data?.data.length - 3) {
     console.log(currentIndex);
     setCurrentIndex(0);
-    console.log("hi");
   }
   return (
     <div className="mt-2">
