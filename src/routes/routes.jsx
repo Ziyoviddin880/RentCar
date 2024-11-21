@@ -10,6 +10,7 @@ import ServicePage from "../pages/service/ServicePage";
 import BrandPage from "../pages/brand/BrandPage";
 import ProductItem from "../pages/productItem/ProductItem";
 import NotFoundPage from "../pages/notFound/NotFoundPage";
+import ProductDetails from "../components/ProductDetails";
 
 export const routes = createBrowserRouter([
   {
@@ -23,6 +24,11 @@ export const routes = createBrowserRouter([
       {
         path: "avto",
         element: <AvtoPage />,
+      },
+      {
+         path:"/product/:id" ,
+         element:<ProductDetails />,
+
       },
       {
         path: "product",
