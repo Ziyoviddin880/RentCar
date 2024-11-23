@@ -28,41 +28,9 @@ function Hero() {
   return (
     <div className="min-h-screen bg-[#1a1a2e] text-white">
       {/* Hero Section with Ferrari Images */}
-      <section className="relative h-screen">
-        <div className="absolute inset-0 flex justify-between overflow-hidden"></div>
+      
 
-        <div className="relative z-10 container mx-auto px-4 pt-32">
-          <h1 className="text-5xl font-bold mb-6">
-            LUXURY CAR RENTAL IN EMIRATES
-          </h1>
-          <p className="max-w-2xl text-lg">
-            Are you ready to feel the adrenaline rush and unleash your inner
-            speed demon? Look no further than Terra luxury car rental Dubai, the
-            city where dreams become reality. In this ultimate guide to sports
-            car rental Dubai, we will take you on a thrilling journey through
-            the world of luxury and supercar rental Dubai.
-          </p>
-        </div>
-      </section>
-
-      {/* Requirements Section */}
-      <section className="py-20 bg-[#1a1a2e]/90">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold">
-            What are the requirements to rent a luxury car in Dubai?
-          </h2>
-          <p className="max-w-3xl text-lg">
-            To rent a car Dubai, it's enough to have a valid driving license and
-            enough funds. & you'll need to show your foreign passport and prove
-            that you have come of age and have driving experience. The age limit
-            and the requirements for the license depend on where you're from.
-            Visitors from Europe, the UK, the US and the Middle East can stay
-            with their national licenses.
-          </p>
-        </div>
-      </section>
-
-      {/* Sports Car Rental Section */}
+      Sports Car Rental Section
       <section className="py-20 bg-[#1a1a2e]">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold mb-8">SPORTS CAR RENTAL DUBAI</h2>
