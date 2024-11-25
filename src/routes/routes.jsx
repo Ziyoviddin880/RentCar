@@ -10,58 +10,67 @@ import ServicePage from "../pages/service/ServicePage";
 import BrandPage from "../pages/brand/BrandPage";
 import ProductItem from "../pages/productItem/ProductItem";
 import NotFoundPage from "../pages/notFound/NotFoundPage";
+import Error from "../pages/error/Error";
 import ProductDetails from "../components/ProductDetails";
 
 export const routes = createBrowserRouter([
-  {
-    path: "/",
-    element: <RootLayout />,
-    children: [
-      {
-        index: true,
-        element: <HomePage />,
-      },
-      {
-        path: "avto",
-        element: <AvtoPage />,
-      },
-      {
-         path:"/product/:id" ,
-         element:<ProductDetails />,
-
-      },
-      {
-        path: "product",
-        element: <ProductPage />,
-      },
-      {
-        path: "product/:id",
-        element: <ProductItem />,
-      },
-      {
-        path: "about",
-        element: <AboutPage />,
-      },
-      {
-        path: "contact",
-        element: <ContactPage />,
-      },
-      {
-        path: "blog",
-        element: <BlogPage />,
-      },
-      {
-        path: "uslug",
-        element: <ServicePage />,
-      },
-      {
-        path: "brand",
-        element: <BrandPage />,
-      },
-      {
-        path: "*",
-        element: <NotFoundPage />,
-      },
-    ],
-  },
+   {
+      path: "/",
+      element: <RootLayout />,
+      children: [
+         {
+            index: true,
+            element: <HomePage />,
+         },
+         {
+            path: "avto",
+            element: <AvtoPage />,
+            errorElement: <Error />,
+         },
+         {
+            path: "/product/:id",
+            element: <ProductDetails />,
+            errorElement: <Error />,
+         },
+         {
+            path: "product",
+            element: <ProductPage />,
+            errorElement: <Error />,
+         },
+         {
+            path: "product/:id",
+            element: <ProductItem />,
+            errorElement: <Error />,
+         },
+         {
+            path: "about",
+            element: <AboutPage />,
+            errorElement: <Error />,
+         },
+         {
+            path: "contact",
+            element: <ContactPage />,
+            errorElement: <Error />,
+         },
+         {
+            path: "blog",
+            element: <BlogPage />,
+            errorElement: <Error />,
+         },
+         {
+            path: "uslug",
+            element: <ServicePage />,
+            errorElement: <Error />,
+         },
+         {
+            path: "brand",
+            element: <BrandPage />,
+            errorElement: <Error />,
+         },
+         {
+            path: "*",
+            element: <NotFoundPage />,
+         },
+      ],
+   },
 ]);
