@@ -12,56 +12,67 @@ import ProductItem from "../pages/productItem/ProductItem";
 import NotFoundPage from "../pages/notFound/NotFoundPage";
 import ProductDetails from "../components/ProductDetails";
 
-export const routes = createBrowserRouter([
+export const routes = createBrowserRouter(
+  [
+    {
+      path: "/",
+      element: <RootLayout />,
+      children: [
+        {
+          index: true,
+          element: <HomePage />,
+        },
+        {
+          path: "avto",
+          element: <AvtoPage />,
+        },
+        {
+          path: "/product/:id",
+          element: <ProductDetails />,
+        },
+        {
+          path: "product",
+          element: <ProductPage />,
+        },
+        {
+          path: "product/:id",
+          element: <ProductItem />,
+        },
+        {
+          path: "about",
+          element: <AboutPage />,
+        },
+        {
+          path: "contact",
+          element: <ContactPage />,
+        },
+        {
+          path: "blog",
+          element: <BlogPage />,
+        },
+        {
+          path: "uslug",
+          element: <ServicePage />,
+        },
+        {
+          path: "brand",
+          element: <BrandPage />,
+        },
+        {
+          path: "*",
+          element: <NotFoundPage />,
+        },
+      ],
+    },
+  ],
   {
-    path: "/",
-    element: <RootLayout />,
-    children: [
-      {
-        index: true,
-        element: <HomePage />,
-      },
-      {
-        path: "avto",
-        element: <AvtoPage />,
-      },
-      {
-         path:"/product/:id" ,
-         element:<ProductDetails />,
-
-      },
-      {
-        path: "product",
-        element: <ProductPage />,
-      },
-      {
-        path: "product/:id",
-        element: <ProductItem />,
-      },
-      {
-        path: "about",
-        element: <AboutPage />,
-      },
-      {
-        path: "contact",
-        element: <ContactPage />,
-      },
-      {
-        path: "blog",
-        element: <BlogPage />,
-      },
-      {
-        path: "uslug",
-        element: <ServicePage />,
-      },
-      {
-        path: "brand",
-        element: <BrandPage />,
-      },
-      {
-        path: "*",
-        element: <NotFoundPage />,
-      },
-    ],
-  },
-]);
+    future: {
+      v7_startTransition: true,
+      v7_relativeSplatPath: true,
+      v7_fetcherPersist: true,
+      v7_normalizeFormMethod: true,
+      v7_partialHydration: true,
+      v7_skipActionErrorRevalidation: true,
+    },
+  }
+);
