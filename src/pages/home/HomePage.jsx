@@ -24,19 +24,19 @@ const HomePage = () => {
       </section>
 
       <section className=" py-20 px-8 bg-[#190608]">
-        <SectionTitle title={"Budget cars Rental Emirates"} />
+        <SectionTitle link="/avto" title={"Budget cars Rental Emirates"} />
         <CarsBox nameEn="Budget cars Rental Emirates" />
 
-        <SectionTitle title={"Sports cars Rental Emirates"} />
+        <SectionTitle link="/avto" title={"Sports cars Rental Emirates"} />
         <CarsBox nameEn="Sports cars Rental Emirates" />
 
-        <SectionTitle title={"Hyper Cars Rental Emirates"} />
+        <SectionTitle link="/avto" title={"Hyper Cars Rental Emirates"} />
         <CarsBox nameEn="Hyper Cars Rental Emirates" />
 
-        <SectionTitle title={"Luxury Cars Rental Emirates"} />
+        <SectionTitle link="/avto" title={"Luxury Cars Rental Emirates"} />
         <CarsBox nameEn="Luxury Cars Rental Emirates" />
 
-        <SectionTitle title={"Cabriolet cars rental Emirates"} />
+        <SectionTitle link="/avto" title={"Cabriolet cars rental Emirates"} />
         <CarsBox nameEn="Cabriolet cars rental Emirates" />
       </section>
 
