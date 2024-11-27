@@ -12,7 +12,7 @@ export default function Cars() {
   const [selectedModel, setSelectedModel] = useState("");
   const [filteredModels, setFilteredModels] = useState([]);
   const [filteredCars, setFilteredCars] = useState([]);
-  const [uniqueCategories, setUniqueCategories] = useState([]); 
+  const [uniqueCategories, setUniqueCategories] = useState([]);
   const imageBaseUrl = "https://realauto.limsa.uz/api/uploads/images/";
 
   const filteredCarsRef = useRef(null);
@@ -24,7 +24,7 @@ export default function Cars() {
       setCars(fetchedCars);
       setFilteredCars(fetchedCars);
 
-      
+
       const categories = [
         ...new Set(fetchedCars.map((car) => car.category?.name_en)),
       ].filter(Boolean);
@@ -197,7 +197,7 @@ export default function Cars() {
             </h3>
           </div>
 
-         
+
 
 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
   {filteredCars.length > 0 ? (
@@ -205,7 +205,7 @@ export default function Cars() {
       const mainImageSrc = getMainImage(car.car_images);
       return (
         <Link
-          to={`/product/${car.id}`} 
+          to={`/product/${car.id}`}
           key={car.id}
           className="bg-gray-900 h-full cursor-pointer text-white p-4 rounded-lg shadow-lg hover:bg-gray-700 flex flex-col"
         >

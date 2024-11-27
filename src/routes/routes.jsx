@@ -11,6 +11,7 @@ import BrandPage from "../pages/brand/BrandPage";
 import ProductItem from "../pages/productItem/ProductItem";
 import NotFoundPage from "../pages/notFound/NotFoundPage";
 import ProductDetails from "../components/ProductDetails";
+import UslugItem from "../pages/uslugItem/UslugItem";
 
 export const routes = createBrowserRouter([
   {
@@ -53,6 +54,10 @@ export const routes = createBrowserRouter([
       {
         path: "uslug",
         element: <ServicePage />,
+      },
+      {
+        path:"uslug/:id",
+        element:<UslugItem/>
       },
       {
         path: "brand",
