@@ -22,7 +22,7 @@ const Header = () => {
   };
 
   return (
-    <header className="bg-[#111219] py-4">
+    <header className="bg-[#111219] py-4 px-8">
       <div className="container mx-auto  text-white flex justify-between items-center">
         <div className="flex items-center gap-2">
           <button
@@ -88,7 +88,6 @@ const Header = () => {
         </NavLink>
         <div className="hidden lg:block">
           <Nav setMobileMenu={setMobileMenu} />
-          {console.log(mobileMenu)}
           <div className="text-right mt-4">
             <a className=" hover:text-red-400" href="tel:+998990000441">
               +998 (99) 000 04 41

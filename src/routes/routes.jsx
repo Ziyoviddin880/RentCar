@@ -10,6 +10,7 @@ import ServicePage from "../pages/service/ServicePage";
 import BrandPage from "../pages/brand/BrandPage";
 import ProductItem from "../pages/productItem/ProductItem";
 import NotFoundPage from "../pages/notFound/NotFoundPage";
+import Error from "../pages/error/Error";
 import ProductDetails from "../components/ProductDetails";
 import UslugItem from "../pages/uslugItem/UslugItem";
 
@@ -27,8 +28,8 @@ export const routes = createBrowserRouter([
         element: <AvtoPage />,
       },
       {
-         path:"/product/:id" ,
-         element:<ProductDetails />,
+        path: "/product/:id",
+        element: <ProductDetails />,
 
       },
       {
@@ -56,8 +57,8 @@ export const routes = createBrowserRouter([
         element: <ServicePage />,
       },
       {
-        path:"uslug/:id",
-        element:<UslugItem/>
+        path: "uslug/:id",
+        element: <UslugItem />
       },
       {
         path: "brand",

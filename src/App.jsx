@@ -5,7 +5,7 @@ import { routes } from "./routes/routes.jsx";
 function App() {
   return (
     <>
-      <RouterProvider router={routes} />
+      <RouterProvider router={routes} future={{ v7_startTransition: true }} />
     </>
   );
 }

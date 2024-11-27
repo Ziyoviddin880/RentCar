@@ -2,8 +2,9 @@ import React, { useEffect, useState, useRef } from "react";
 import api from "../api/api";
 import { toast } from "react-toastify";
 import { FaWhatsapp, FaTelegram } from "react-icons/fa";
-import logo from '../images/logo.png'
+import logo from "../images/logo.png";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 export default function Cars() {
   const [cars, setCars] = useState([]);
@@ -14,6 +15,7 @@ export default function Cars() {
   const [filteredCars, setFilteredCars] = useState([]);
   const [uniqueCategories, setUniqueCategories] = useState([]);
   const imageBaseUrl = "https://realauto.limsa.uz/api/uploads/images/";
+  const {t}= useTranslation()
 
   const filteredCarsRef = useRef(null);
 
@@ -24,13 +26,18 @@ export default function Cars() {
       setCars(fetchedCars);
       setFilteredCars(fetchedCars);
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> c01864288fcb53d70fb0c71dcbdc514adc49f357
       const categories = [
         ...new Set(fetchedCars.map((car) => car.category?.name_en)),
       ].filter(Boolean);
       setUniqueCategories(categories);
 
-      setFilteredModels([...new Set(fetchedCars.map((car) => car.model?.name))]);
+      setFilteredModels([
+        ...new Set(fetchedCars.map((car) => car.model?.name)),
+      ]);
     } catch (error) {
       toast.error(error?.response?.data?.message || "Something went wrong");
     }
@@ -143,7 +150,10 @@ export default function Cars() {
           </h2>
           <div className="flex flex-col gap-2 border-b-2 pb-5 ">
             {getUniqueBrands().map((brand, index) => (
-              <label key={index} className="flex cursor-pointer items-center text-white">
+              <label
+                key={index}
+                className="flex cursor-pointer items-center text-white"
+              >
                 <input
                   type="checkbox"
                   value={brand}
@@ -156,9 +166,7 @@ export default function Cars() {
             ))}
           </div>
 
-          <h2 className="text-xl font-semibold text-white mb-4  pt-5">
-            Model
-          </h2>
+          <h2 className="text-xl font-semibold text-white mb-4  pt-5">Model</h2>
           <div className="flex flex-col gap-2">
             <select
               className="bg-gray-700 text-white rounded-md p-2 mb-4"
@@ -197,6 +205,7 @@ export default function Cars() {
             </h3>
           </div>
 
+<<<<<<< HEAD
 
 
 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
@@ -247,15 +256,64 @@ export default function Cars() {
               <FaTelegram className="text-xl" />
               <span>Telegram</span>
             </a>
+=======
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+            {filteredCars.length > 0 ? (
+              filteredCars.map((car) => {
+                const mainImageSrc = getMainImage(car.car_images);
+                return (
+                  <Link
+                    to={`/product/${car.id}`}
+                    key={car.id}
+                    className="bg-gray-900 h-full cursor-pointer text-white p-4 rounded-lg shadow-lg hover:bg-gray-700 flex flex-col"
+                  >
+                    <img
+                      src={
+                        mainImageSrc
+                          ? `${imageBaseUrl}${mainImageSrc}`
+                          : "https://via.placeholder.com/300"
+                      }
+                      alt={car.model?.name || "Car"}
+                      className="w-full h-48 object-cover rounded-md mb-4"
+                    />
+                    <h2 className="text-lg font-semibold mb-2">
+                      {car.brand?.title} {car.model?.name}
+                    </h2>
+                    <p className="text-md mb-2">
+                      AED {car.price_in_aed || "0"} / ${" "}
+                      {car.price_in_usd || "0"}
+                    </p>
+                    <p className="text-sm text-gray-400 mb-4">
+                      Limit per day: {car.limitperday || "Unlimited"} km
+                    </p>
+                    <div className="flex gap-2 mt-auto">
+                      <a
+                        href={`https://wa.me/97112345678?text=I'm interested in ${car.brand?.title} ${car.model?.name}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex-1 bg-green-500 text-white py-2 px-1 rounded-md flex items-center justify-center space-x-2"
+                      >
+                        <FaWhatsapp className="text-xl" />
+                        <span>WhatsApp</span>
+                      </a>
+                      <a
+                        href={`https://t.me/share/url?url=&text=I'm interested in ${car.brand?.title} ${car.model?.name}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex-1 bg-blue-600 text-white py-2 px-1 rounded-md flex items-center justify-center space-x-2"
+                      >
+                        <FaTelegram className="text-xl" />
+                        <span>Telegram</span>
+                      </a>
+                    </div>
+                  </Link>
+                );
+              })
+            ) : (
+              <p className="text-center text-white">No cars available.</p>
+            )}
+>>>>>>> c01864288fcb53d70fb0c71dcbdc514adc49f357
           </div>
-        </Link>
-      );
-    })
-  ) : (
-    <p className="text-center text-white">No cars available.</p>
-  )}
-</div>
-
         </div>
       </div>
     </div>
