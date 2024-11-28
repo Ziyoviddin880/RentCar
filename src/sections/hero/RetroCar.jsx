@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
-import { LazyImage } from "../../utils/lazyImage";
 import retroFerrari from "../../images/retroFerrari.png";
 
 const RetroCar = () => {

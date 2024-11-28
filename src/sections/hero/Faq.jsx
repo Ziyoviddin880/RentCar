@@ -1,8 +1,4 @@
-import * as Accordion from "@radix-ui/react-accordion";
-import { ChevronDown } from "lucide-react";
 import redFerrari from "../../images/redFerrari.png";
-import { HelpCircle } from "lucide-react";
-import * as Tooltip from "@radix-ui/react-tooltip";
 import { useState } from "react";
 import { ChevronRight } from "lucide-react";
 
@@ -44,7 +40,6 @@ const Faq = () => {
 
    return (
       <div className="w-full bg-[#1f1f27] text-white relative">
-         {/* Fixed height container for background image */}
          <div
             className="absolute inset-0 overflow-hidden"
             style={{ height: "700px" }}
@@ -57,7 +52,6 @@ const Faq = () => {
             />
          </div>
 
-         {/* Content container */}
          <div className="relative z-10 py-8 sm:py-16 px-4 md:px-8">
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-8 sm:mb-12">
                FAQ

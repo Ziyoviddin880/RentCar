@@ -12,13 +12,12 @@ import post9 from "../../images/post9.jpg";
 import post10 from "../../images/post10.jpg";
 import { LazyImage } from "../../utils/lazyImage";
 
-// Add CSS to hide scrollbars while keeping functionality
 const scrollbarHideStyles = {
-   '-ms-overflow-style': 'none',  /* IE and Edge */
-   'scrollbarWidth': 'none',      /* Firefox */
-   '&::-webkit-scrollbar': {      /* Chrome, Safari and Opera */
-      display: 'none'
-   }
+   "-ms-overflow-style": "none",
+   scrollbarWidth: "none",
+   "&::-webkit-scrollbar": {
+      display: "none",
+   },
 };
 
 const posts = [
@@ -41,7 +40,6 @@ const InstaPosts = () => {
    const [scrollLeft, setScrollLeft] = useState(0);
    const [selectedImage, setSelectedImage] = useState(null);
 
-   // Handle body scroll lock when modal is open
    useEffect(() => {
       if (selectedImage) {
          document.body.style.overflow = "hidden";
@@ -55,7 +53,7 @@ const InstaPosts = () => {
    }, [selectedImage]);
 
    const handleMouseDown = (e) => {
-      if (selectedImage) return; // Prevent dragging when modal is open
+      if (selectedImage) return;
       setIsDragging(true);
       setStartX(e.pageX - scrollRef.current.offsetLeft);
       setScrollLeft(scrollRef.current.scrollLeft);
@@ -84,7 +82,6 @@ const InstaPosts = () => {
    };
 
    const handleModalClick = (e) => {
-      // Only close if clicking the backdrop (not the image)
       if (e.target === e.currentTarget) {
          setSelectedImage(null);
       }
@@ -96,7 +93,6 @@ const InstaPosts = () => {
             FOLLOW US ON INSTAGRAM
          </h1>
 
-         {/* Touch-friendly scroll container with mouse drag support */}
          <div
             ref={scrollRef}
             className="w-full overflow-x-auto cursor-grab active:cursor-grabbing"
@@ -132,12 +128,10 @@ const InstaPosts = () => {
             </div>
          </div>
 
-         {/* Current position indicator */}
          <div className="text-white/50 text-xs sm:text-sm text-center mt-4">
             Drag to scroll
          </div>
 
-         {/* Modal for larger image view */}
          {selectedImage && (
             <div
                className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4"

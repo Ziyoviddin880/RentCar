@@ -21,7 +21,6 @@ const LocationCity = () => {
       <div className="w-full bg-[#1f1f27] py-8 sm:py-16 px-4 md:px-8">
          <div className="max-w-6xl mx-auto">
             <div className="grid grid-cols-2 gap-4 sm:gap-8">
-               {/* Location Column */}
                <div>
                   <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4 sm:mb-8">
                      LOCATION
@@ -39,7 +38,6 @@ const LocationCity = () => {
                   </div>
                </div>
 
-               {/* City Column */}
                <div>
                   <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4 sm:mb-8">
                      CITY
