@@ -6,8 +6,8 @@ import SerCardImg2 from "../../../public/images/uslug-2-LkBjqsZl.jpg";
 const ServicePage = () => {
   return (
     <>
-      <section className="w-full bg-[#1E1F27]">
-        <div className="container">
+      <section className="container-fluid mx-auto py-8 w-full bg-[#1E1F27]">
+        <div className="container container-fluid mx-auto py-8">
           <div className="service_box">
             <Link to="/" className="text-[#fff9]">
               Luxury Cars for Rent in Dubai / Services
