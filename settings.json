@@ -1,0 +1,4 @@
+{
+    "extensions.gallery.url": "https://marketplace.visualstudio.com/_apis/public/gallery",
+    "extensions.gallerySearchUrl": "https://marketplace.visualstudio.com/_apis/public/gallery/searchUrl"
+}

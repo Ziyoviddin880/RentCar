@@ -1,18 +1,19 @@
-import React from "react";
 import LeftFerrari from "../../images/LeftFerrari.png";
 import RightFerrari from "../../images/RightFerrari.png";
+
 const TwoFerrari = () => {
    return (
-      <div>
-         <div className="grid grid-cols-1 md:grid-cols-5 md:px-12 bg-[#27313b] py-24">
+      <div className="w-full overflow-hidden">
+         <div className="grid grid-cols-1 md:grid-cols-7 bg-[#27313b] py-24">
             <section className="hidden md:block md:col-span-1 h-fit">
                <img
                   src={LeftFerrari}
                   alt="Left Ferrari Image"
-                  className="w-full h-auto"
+                  className="w-full h-auto max-w-[200px] -ml-2"
+                  loading="lazy"
                />
             </section>
-            <section className="text-white px-4 md:px-8 md:col-span-3">
+            <section className="text-white px-4 md:px-8 md:col-span-5">
                <h1 className="text-[1.8rem] md:text-[2.5rem] mb-3 md:mb-5">
                   LUXURY CAR RENTAL IN EMIRATES
                </h1>
@@ -57,8 +58,9 @@ const TwoFerrari = () => {
             <section className="hidden md:block md:col-span-1 h-fit">
                <img
                   src={RightFerrari}
-                  alt="Right Ferrari image"
-                  className="w-full h-auto"
+                  alt="Right Ferrari Image"
+                  className="w-full h-auto max-w-[200px] -mr-2 ml-auto"
+                  loading="lazy"
                />
             </section>
          </div>
