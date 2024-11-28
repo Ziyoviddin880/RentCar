@@ -13,6 +13,7 @@ import NotFoundPage from "../pages/notFound/NotFoundPage";
 import Error from "../pages/error/Error";
 import ProductDetails from "../components/ProductDetails";
 import UslugItem from "../pages/uslugItem/UslugItem";
+import BlogData from "../pages/blog/BlogData";
 
 export const routes = createBrowserRouter([
   {
@@ -51,6 +52,10 @@ export const routes = createBrowserRouter([
       {
         path: "blog",
         element: <BlogPage />,
+      },
+      {
+        path: "blog/:id",
+        element: <BlogData />,
       },
       {
         path: "uslug",

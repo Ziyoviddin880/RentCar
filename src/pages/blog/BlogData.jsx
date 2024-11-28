@@ -1,12 +1,12 @@
-import { FiArrowRightCircle } from "react-icons/fi";
-
+import React from 'react'
 import blogImg1 from "../../images/blog-1.jpg";
 import blogImg2 from "../../images/blog-2.jpg";
 import blogImg3 from "../../images/blog-3.jpg";
-import { Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 
-const BlogPage = () => {
+
+const BlogData = () => {
   const blogData = [
     {
       id: 1,
@@ -39,49 +39,29 @@ const BlogPage = () => {
       blog_location: "Burj Khalifa"
     }
   ]
+
+  const { id } = useParams()
+  console.log(id, "idddd")
+  const BlogContent = blogData.find((item) => item?.id === Number(id))
+  const { blog_image, blog_title, blog_text, blog_location, blog_subtext } = BlogContent;
   return (
-    <>
-      <div className="blog-page-container bg-[#0E0F15]">
-        <div className="text-white w-full px-[20vw] border-2 border-solid border-black pt-10 bg-cover bg-center min-h-screen">
+    <div className="blog-page-container bg-[#0E0F15]">
+      <div className="text-white w-full px-[20vw] border-2 border-solid border-black pt-10 bg-cover bg-center min-h-screen">
+        <div className="blog-con-menu bg-[#272933] flex flex-col gap-14 text-white p-[20px] p768:p-[30px] mb-12">
           <div className="blogLinkContainer my-4">
             <a className="blogLink text-gray-400 hover:text-gray-200" href="https://terra-rentacar.uz/">
-              Luxury Cars for Rent in Dubai / Blog
+              Luxury Cars for Rent in Dubai / Blog {blog_title}
             </a>
-          </div>
-          <div className="aboutTexts flex flex-col gap-5 mb-16">
-            <h4 className="aboutTitle my-10 text-3xl font-bold leading-normal">
-              Blog
-            </h4>
-          </div>
-          <div className="blog-con-menu bg-[#272933] flex flex-col gap-14 text-white p-[20px] p768:p-[30px] mb-12">
-            {blogData.map((blog) => (
-              <div key={blog.id} className="blog-con-card p768:flex gap-8 flex">
-                <img
-                  src={blog.blog_image}
-                  alt={blog.blog_title}
-                  className="max-w-[300px] object-cover"
-                />
-                <div className="info flex flex-col justify-between mt-6 p768:mt-0">
-                  <h2 className="text-[20px] p480:text-[36px] mb-3 p768:mb-[35px] leading-[110%] font-semibold mt-2">
-                    {blog.blog_title}
-                  </h2>
-                  <p className="text-[16px] p480:text-[18px] font-serif">
-                    {blog.blog_short_text}
-                  </p>
-                  <Link to={`${blog.id}`} className="flex mt-[20px] p768:mt-0 items-center justify-between">
-                    <span>{blog.blog_date}</span>
-                    <a href="#" className="transform hover:scale-110">
-                      <FiArrowRightCircle className="text-[30px] opacity-85" />
-                    </a>
-                  </Link>
-                </div>
-              </div>
-            ))}
+            <h3 className='text-[22px] p768:text-[42px] mt-[35px] p768:mt-[120px] mb-[10px] p768:mb-[50px] leading-[120%] font-semibold'>{blog_title}</h3>
+            <p className='text-[18px] leading-[150%]'>{blog_text}</p>
+            <p className='mt-[25px]'>{blog_location}</p>
+            <img className='w-full h-[300px] p768:h-[500px] p768:object-cover object-bottom my-[20px]' src={blog_image} alt="Mahkamov | Dev" />
+            <p className='text-[18px] leading-[150%]'>{blog_subtext}</p>
           </div>
         </div>
       </div>
-    </>
+    </div>
   )
-};
+}
 
-export default BlogPage;
+export default BlogData
