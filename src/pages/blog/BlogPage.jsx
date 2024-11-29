@@ -42,36 +42,45 @@ const BlogPage = () => {
   return (
     <>
       <div className="blog-page-container bg-[#0E0F15]">
-        <div className="text-white w-full px-[20vw] border-2 border-solid border-black pt-10 bg-cover bg-center min-h-screen ">
+        <div className="text-white w-full px-4 sm:px-[10vw] md:px-[15vw] lg:px-[20vw] border-2 border-solid border-black pt-10 bg-cover bg-center min-h-screen">
           <div className="blogLinkContainer my-4">
-            <a className="blogLink text-gray-400 hover:text-gray-200" href="https://terra-rentacar.uz/">
+            <a
+              className="blogLink text-gray-400 hover:text-gray-200"
+              href="https://terra-rentacar.uz/"
+            >
               Luxury Cars for Rent in Dubai / Blog
             </a>
           </div>
           <div className="aboutTexts flex flex-col gap-5 mb-16">
-            <h4 className="aboutTitle my-10 text-3xl font-bold leading-normal">
+            <h4 className="aboutTitle my-10 text-2xl sm:text-3xl font-bold leading-normal">
               Blog
             </h4>
           </div>
-          <div className="blog-con-menu bg-[#272933] flex flex-col gap-14 text-white p-[20px] p768:p-[30px] mb-12">
+          <div className="blog-con-menu bg-[#272933] flex flex-col gap-8 sm:gap-10 lg:gap-14 text-white p-5 sm:p-[20px] md:p-[30px] mb-12">
             {blogData.map((blog) => (
-              <div key={blog.id} className="blog-con-card p768:flex gap-8 flex">
+              <div
+                key={blog.id}
+                className="blog-con-card flex flex-col md:flex-row gap-4 sm:gap-8"
+              >
                 <img
                   src={blog.blog_image}
                   alt={blog.blog_title}
-                  className="max-w-[300px] object-cover"
+                  className="w-full max-w-full sm:max-w-[200px] md:max-w-[250px] lg:max-w-[300px] object-cover"
                 />
-                <div className="info flex flex-col justify-between mt-6 p768:mt-0">
-                  <h2 className="text-[20px] p480:text-[36px] mb-3 p768:mb-[35px] leading-[110%] font-semibold mt-2">
+                <div className="info flex flex-col justify-between mt-4 sm:mt-6 md:mt-0">
+                  <h2 className="text-[18px] sm:text-[20px] md:text-[24px] lg:text-[36px] mb-3 md:mb-[20px] lg:mb-[35px] leading-[110%] font-semibold mt-2">
                     {blog.blog_title}
                   </h2>
-                  <p className="text-[16px] p480:text-[18px] font-serif">
+                  <p className="text-[14px] sm:text-[16px] lg:text-[18px] font-serif">
                     {blog.blog_short_text}
                   </p>
-                  <Link to={`${blog.id}`} className="flex mt-[20px] p768:mt-0 items-center justify-between">
-                    <span>{blog.blog_date}</span>
+                  <Link
+                    to={`${blog.id}`}
+                    className="flex mt-[20px] sm:mt-4 lg:mt-6 items-center justify-between"
+                  >
+                    <span className="text-sm sm:text-base">{blog.blog_date}</span>
                     <a href="#" className="transform hover:scale-110">
-                      <FiArrowRightCircle className="text-[30px] opacity-85" />
+                      <FiArrowRightCircle className="text-[20px] sm:text-[25px] lg:text-[30px] opacity-85" />
                     </a>
                   </Link>
                 </div>
@@ -81,6 +90,7 @@ const BlogPage = () => {
         </div>
       </div>
     </>
+
   )
 };
 
