@@ -42,7 +42,7 @@ const BlogPage = () => {
   return (
     <>
       <div className="blog-page-container bg-[#0E0F15]">
-        <div className="text-white w-full px-[20vw] border-2 border-solid border-black pt-10 bg-cover bg-center min-h-screen">
+        <div className="text-white w-full px-[20vw] border-2 border-solid border-black pt-10 bg-cover bg-center min-h-screen ">
           <div className="blogLinkContainer my-4">
             <a className="blogLink text-gray-400 hover:text-gray-200" href="https://terra-rentacar.uz/">
               Luxury Cars for Rent in Dubai / Blog

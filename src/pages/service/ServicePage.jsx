@@ -1,24 +1,30 @@
-import { Link } from "react-router-dom";
 import ServiceCard from "../../components/service_card/ServiceCard";
-import SerCardImg from "../../../public/images/uslug-1-Dm8nxdJt.jpg";
-import SerCardImg2 from "../../../public/images/uslug-2-LkBjqsZl.jpg";
 
 const ServicePage = () => {
   return (
     <>
-      <section className="container-fluid mx-auto py-8 w-full bg-[#1E1F27]">
-        <div className="container container-fluid mx-auto py-8">
-          <div className="service_box">
-            <Link to="/" className="text-[#fff9]">
-              Luxury Cars for Rent in Dubai / Services
-            </Link>
+        <div className="service-page-container bg-[#1E1F27]">
+          <div
+            className="text-white w-full px-[20vw] border-2 border-solid border-black pt-10 bg-cover bg-center min-h-screen"
+          >
+            <div className="serviceLinkContainer my-4">
+              <a
+                className="serviceLink text-gray-400 hover:text-gray-200"
+                href="https://terra-rentacar.uz/"
+              >
+                Luxury Cars for Rent in Dubai / Services
+              </a>
+            </div>
+            <div className="aboutTexts flex flex-col gap-5 mb-1">
+              <h1 className="aboutTitle my-8 text-3xl font-bold leading-normal">
+                SERVICE
+              </h1>
+            </div>
             <div className="flex gap-10">
-              <ServiceCard SerCardImg={SerCardImg} title="Ride a buggy in Dubai and have fun" text="Experience the thrill of a dune buggy tour in Dubai with us. We offer free hotel pick-up & drop-off service. Book now" />
-              <ServiceCard SerCardImg={SerCardImg2} title="Ride a buggy in Dubai and have fun" text="Experience the thrill of a dune buggy tour in Dubai with us. We offer free hotel pick-up & drop-off service. Book now" />
+              <ServiceCard />
             </div>
           </div>
         </div>
-      </section>
     </>
   );
 };
